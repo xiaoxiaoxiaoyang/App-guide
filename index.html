@@ -28,7 +28,7 @@
             padding: 10px;
             font-size: 14px;
             color: #fffbfa;
-            border-radius: 12px;
+            border-radius: 5px;
             background: #4562a6;
         }
         .content .guide .tip:before{
@@ -63,7 +63,7 @@
             height: 20px;
             background: url(./img/guide/footer-logo.png) no-repeat;
             background-size: 80px 20px;
-            margin-bottom: 10px;
+            margin-bottom: 4px;
         }
         .content .guide .footerLogo.active{
             background: url(./img/guide/footer-logo-1.png) no-repeat;
@@ -71,7 +71,7 @@
         }
         .content .guide .prompt{
             text-align: center;
-            color: #3860b5;
+            color: #4562a6;
             font-size: 12px;
         }
         .download{
@@ -124,7 +124,7 @@
             width: 100%;
             color: #fefffa;
             font-size: 20px;
-            position: fixed;
+            position: absolute;;
             bottom: 20px;
             text-align: center;
             font-family: '微软雅黑';
@@ -158,7 +158,7 @@
                 <div class="download-logo"></div>
                 <div class="down-warper">
                         <a class="png-warper png-ios "  href="javascript:;" ><img src="./img/down/ios.png"  class="download-ios" alt=""></a>
-                        <a class="png-warper png-and " href="https://www.caymanex.pro/cayman-android-1.0.0.apk" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""></a>
+                        <a class="png-warper png-and " href="./down.html" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""></a>
                 </div>
                <div class="download-content"> 服务应用<span> </span>领衔全球</div>
         </div>
@@ -194,7 +194,6 @@
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         if(isAndroid){
-            // window.location.href="https://www.caymanex.pro/cayman-android-1.0.0.apk"
             return true;
         }else if(isiOS){
             return false

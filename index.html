@@ -170,8 +170,8 @@
     function isWeiXin(){
         var ua = navigator.userAgent.toLowerCase();
             alert(ua)
-        if (ua.indexOf("Safari") > -1) {
-            alert("Safari")
+        if (ua.indexOf("safari") > -1) {
+            alert("safari")
             return false;
         }
         else if(ua.match(/MicroMessenger/i)=="micromessenger"||ua.match(/WeiBo/i) == "weibo") {
@@ -194,7 +194,8 @@
         }
         return false;
     }
-    if(!isWeiXin()){
+    let off = isWeiXin()
+    if(off){
         contentEl.className += ' active';
     }
     function user(){

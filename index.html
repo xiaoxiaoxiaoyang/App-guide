@@ -157,8 +157,8 @@
         <div class="download">
                 <div class="download-logo"></div>
                 <div class="down-warper">
-                        <a class="png-warper png-ios "  href="https://www.caymanex.pro/cayman-android-1.0.0.apk" download="cayman"><img src="./img/down/ios.png"  class="download-ios" alt=""></a>
-                        <a class="png-warper png-and " href="" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""></a>
+                        <a class="png-warper png-ios "  href="javascript:;" ><img src="./img/down/ios.png"  class="download-ios" alt=""></a>
+                        <a class="png-warper png-and " href="https://www.caymanex.pro/cayman-android-1.0.0.apk" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""></a>
                 </div>
                <div class="download-content"> 服务应用<span> </span>领衔全球</div>
         </div>
@@ -194,6 +194,7 @@
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         if(isAndroid){
+            // window.location.href="https://www.caymanex.pro/cayman-android-1.0.0.apk"
             return true;
         }else if(isiOS){
             return false

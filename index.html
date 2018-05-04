@@ -169,33 +169,31 @@
     let  footerLogo = document.querySelector('.footerLogo')
     function isWeiXin(){
         var ua = navigator.userAgent.toLowerCase();
-            alert(ua)
-        if (ua.indexOf("safari") > -1) {
-            alert("safari")
-            return false;
-        }
-        else if(ua.match(/MicroMessenger/i)=="micromessenger"||ua.match(/WeiBo/i) == "weibo") {
+            
+       
+        if(ua.match(/MicroMessenger/i)=="micromessenger"||ua.match(/WeiBo/i) == "weibo") {
             alert('micromessenger')
             return true;
-        }else if(ua.indexOf('mobile mqqbrowser')>-1){
-            alert('mobile mqqbrowser')  
-            return true;
         }
-        else if( ua.match(/\sQQ/i) ){
-            alert('/\sQQ/i')    
-            return true;
-        } 
-        else if(ua.indexOf('iphone') > -1 || ua.indexOf('mac') > -1){   
-            if(ua.indexOf('qq') > -1){
-                alert('qq') 
-                return true;
-            }
+        // else if(ua.indexOf('mobile mqqbrowser')>-1){
+        //     alert('mobile mqqbrowser')  
+        //     return true;
+        // }
+        // else if( ua.match(/\sQQ/i) ){
+        //     alert('/\sQQ/i')    
+        //     return true;
+        // } 
+        // else if(ua.indexOf('iphone') > -1 || ua.indexOf('mac') > -1){   
+        //     if(ua.indexOf('qq') > -1){
+        //         alert('qq') 
+        //         return true;
+        //     }
             
-        }
+        // }
         return false;
     }
-    let off = isWeiXin()
-    if(off){
+    // let off = isWeiXin()
+    if(!isWeiXin()){
         contentEl.className += ' active';
     }
     function user(){

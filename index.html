@@ -169,8 +169,11 @@
     let  footerLogo = document.querySelector('.footerLogo')
     function isWeiXin(){
         var ua = navigator.userAgent.toLowerCase();
-        
-        if(ua.match(/MicroMessenger/i)=="micromessenger"||ua.match(/WeiBo/i) == "weibo") {
+        if (ua.indexOf("Safari") > -1) {
+            alert("Safari")
+            return false;
+        }
+        else if(ua.match(/MicroMessenger/i)=="micromessenger"||ua.match(/WeiBo/i) == "weibo") {
             alert('micromessenger')
             return true;
         }else if(ua.indexOf('mobile mqqbrowser')>-1){
@@ -186,9 +189,7 @@
                 alert('qq') 
                 return true;
             }
-            alert('卧槽，是这里')
-            return true;
-        
+            
         }
         return false;
     }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cayman</title>
     <style>
         *{
@@ -63,6 +62,11 @@
             width: 80px;
             height: 20px;
             background: url(./img/guide/footer-logo.png) no-repeat;
+            background-size: 80px 20px;
+            margin-bottom: 10px;
+        }
+        .content .guide .footerLogo.active{
+            background: url(./img/guide/footer-logo-1.png) no-repeat;
             background-size: 80px 20px;
         }
         .content .guide .prompt{
@@ -153,7 +157,7 @@
         <div class="download">
                 <div class="download-logo"></div>
                 <div class="down-warper">
-                        <a class="png-warper png-ios "  href="" download="cayman"><img src="./img/down/ios.png"  class="download-ios" alt=""></a>
+                        <a class="png-warper png-ios "  href="https://www.caymanex.pro/cayman-android-1.0.0.apk" download="cayman"><img src="./img/down/ios.png"  class="download-ios" alt=""></a>
                         <a class="png-warper png-and " href="" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""></a>
                 </div>
                <div class="download-content"> 服务应用<span> </span>领衔全球</div>
@@ -162,6 +166,7 @@
 </body>
 <script>
     let  contentEl = document.querySelector('.content')
+    let  footerLogo = document.querySelector('.footerLogo')
     function isWeiXin(){
         var ua = navigator.userAgent.toLowerCase();
         
@@ -184,5 +189,21 @@
     if(!isWeiXin()){
         contentEl.className += ' active';
     }
+    function user(){
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return true;
+        }else if(isiOS){
+            return false
+        }else{
+            return true;
+        }
+    }
+    if(user()){
+        footerLogo.className += ' active';
+    }
+    
 </script>
 </html>

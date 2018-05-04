@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cayman</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            width: 100vw;
+            
+        }
+        
+        .content .guide{
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            
+        }
+        .content .guide .tip{
+            position: fixed;
+            top: 20px;
+            right: 10px;
+            padding: 10px;
+            font-size: 14px;
+            color: #fffbfa;
+            border-radius: 12px;
+            background: #4562a6;
+        }
+        .content .guide .tip:before{
+            border-radius: 0;
+            position:absolute;
+            top: -8px;
+            right: 10px;
+            border-left:9px solid transparent;
+            border-right:9px solid transparent;
+            border-bottom:9px solid #4562a6;
+            content:" ";display:block;width:0;height:0}
+        .content .guide .tip p{
+            text-align: center;
+        }
+        .content .guide .logo{
+            width: 200px;
+            height: 66px;
+            background: url(./img/guide/logo.png) no-repeat;
+            background-size: 200px 66px;
+            margin: 200px auto;
+        }
+        .content .guide .footerWarper{
+            position: fixed;
+            width: 100%;
+            bottom: 40px;
+        }
+        .content .guide .footerLogo{
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+            width: 80px;
+            height: 20px;
+            background: url(./img/guide/footer-logo.png) no-repeat;
+            background-size: 80px 20px;
+        }
+        .content .guide .prompt{
+            text-align: center;
+            color: #3860b5;
+            font-size: 12px;
+        }
+        .download{
+            border: .1px solid #1b103a;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            background: url(./img/down/bg.png) no-repeat;
+            background-size: cover;
+            
+        }
+        .download .down-warper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .download .download-logo{
+            width: 200px;
+            height: 66px;
+            background: url(./img/down/logo.png) no-repeat;
+            background-size: 200px 66px;
+            margin: 140px auto;
+            margin-bottom: 100px;
+        }
+        .download .png-warper{
+            display: inline-block;
+            width: 90px;
+           height: 23px;
+            padding: 8px 29px;
+            border: 1px solid #62527f;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            
+        }
+        .download .png-warper.png-and{
+            width: 120px;
+           height: 28px;
+            padding: 6px 14px;
+        }
+        .download .png-warper img.download-ios {
+            width: 90px;
+           height: 23px;
+        }
+        .download .png-warper img.download-and {
+            width: 120px;
+           height: 30px;
+        }
+        .download .download-content{
+            width: 100%;
+            color: #fefffa;
+            font-size: 20px;
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            font-family: '微软雅黑';
+        }
+        .content.active .guide{
+            display: none;
+        }
+        .content .download{
+            display: none;
+        }
+        .content.active .download{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="guide">
+                    <div class="tip">
+                        <p>请点击左上角</p>
+                        <p>选择"浏览器打开"</p>
+                    </div>
+                <div class="logo"></div>
+                <div class="footerWarper">
+                        <div class="footerLogo"></div>
+                        <p class="prompt">微信/QQ内无法下载应用</p>  
+                </div>
+                
+        </div>
+        <div class="download">
+                <div class="download-logo"></div>
+                <div class="down-warper">
+                        <a class="png-warper png-ios "  href="" download="cayman"><img src="./img/down/ios.png"  class="download-ios" alt=""></a>
+                        <a class="png-warper png-and " href="" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""></a>
+                </div>
+               <div class="download-content"> 服务应用<span> </span>领衔全球</div>
+        </div>
+    </div>
+</body>
+<script>
+    let  contentEl = document.querySelector('.content')
+    function isWeiXin(){
+        var ua = navigator.userAgent.toLowerCase();
+        
+        if(ua.match(/MicroMessenger/i)=="micromessenger"||ua.match(/WeiBo/i) == "weibo") {
+            return true;
+        }else if(ua.indexOf('mobile mqqbrowser')>-1){  
+            return true;
+        }
+        else if( ua.match(/\sQQ/i) ){   
+            return true;
+        } 
+        else if(ua.indexOf('iphone') > -1 || ua.indexOf('mac') > -1){   
+            if(ua.indexOf('qq') > -1){
+                return true;
+        }
+        
+        }
+        return false;
+    }
+    if(!isWeiXin()){
+        contentEl.className += ' active';
+    }
+</script>
+</html>

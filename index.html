@@ -129,14 +129,17 @@
             text-align: center;
             font-family: '微软雅黑';
         }
-        .content.active .guide{
+        .content .guide{
             display: none;
+        }
+        .content.active .guide{
+            display: block;
         }
         .content .download{
-            display: none;
+            display: block;
         }
         .content.active .download{
-            display: block;
+            display: none;
         }
     </style>
 </head>
@@ -193,7 +196,7 @@
         return false;
     }
     // let off = isWeiXin()
-    if(!isWeiXin()){
+    if(isWeiXin()){
         contentEl.className += ' active';
     }
     function user(){

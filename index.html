@@ -90,35 +90,53 @@
             align-items: center;
         }
         .download .download-logo{
-            width: 200px;
-            height: 66px;
+            width: 113px;
+            height: 123px;
             background: url(./img/down/logo.png) no-repeat;
-            background-size: 200px 66px;
+            background-size: 113px 123px;
             margin: 140px auto;
-            margin-bottom: 100px;
+            margin-bottom: 20px;
+        }
+        .download  .content{
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 40px;
         }
         .download .png-warper{
-            display: inline-block;
-            width: 90px;
-           height: 23px;
-            padding: 8px 29px;
-            border: 1px solid #62527f;
+            box-sizing: border-box;
+            display: flex;
+            width: 200px;
+           height: 50px;
+            padding: 8px 20px;
+            border: 1px solid #55648b;
             border-radius: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             
         }
+        
+        .download .png-warper p{
+            padding-left: 10px;
+        }
         .download .png-warper.png-and{
-            width: 120px;
-           height: 28px;
-            padding: 6px 14px;
+            
         }
         .download .png-warper img.download-ios {
-            width: 90px;
-           height: 23px;
+            width: 25px;
+            height: 30px;
+           
         }
         .download .png-warper img.download-and {
-            width: 120px;
-           height: 30px;
+            width: 26px;
+            height: 30px;
         }
         .download .download-content{
             width: 100%;
@@ -159,11 +177,12 @@
         </div>
         <div class="download">
                 <div class="download-logo"></div>
+                <p class="content">币付钱包(支持GCA)</p>
                 <div class="down-warper">
-                        <!-- <a class="png-warper png-ios "  href="itms-services:///?action=download-manifest&url=https://www.caymanex.pro/app/caymanex.plist" ><img src="./img/down/ios.png"  class="download-ios" alt=""></a> -->
-                        <a class="png-warper png-and " href="http://static.bipay.xin/bifu_1.2.0.apk" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""></a>
+                        <a class="png-warper png-ios "  href="itms-services:///?action=download-manifest&url=https://www.caymanex.pro/app/caymanex.plist" ><img src="./img/down/ios.png"  class="download-ios" alt=""><p>IOS下载</p></a>
+                        <a class="png-warper png-and " href="http://static.bipay.xin/bifu_1.2.0.apk" download="cayman"><img src="./img/down/android.png" class="download-and" alt=""><p>Android下载</p></a>
                 </div>
-               <div class="download-content"> 服务应用<span> </span>领衔全球</div>
+               <!-- <div class="download-content"> 服务应用<span> </span>领衔全球</div> -->
         </div>
     </div>
 </body>
